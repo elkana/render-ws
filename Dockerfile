@@ -1,4 +1,5 @@
-FROM eclipse-temurin:17-jdk-apine as build
+# https://docs.docker.com/language/java/develop/
+FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /workspace/app
 
 COPY mvnw .

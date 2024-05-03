@@ -4,6 +4,9 @@ pipeline {
   //   def dockerHome = tool 'mydocker'
   //   PATH = "${dockerHome}:${env.PATH}"
   // }  
+  tools {
+    docker "mydocker"
+  }
   stages {
     stage('Hello') {
       agent any

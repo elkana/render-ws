@@ -1,9 +1,5 @@
 pipeline {
-  agent {
-    docker {
-        image 'node'
-    }
-  }
+  agent none
   // environment {
   //   def dockerHome = tool 'mydocker'
   //   PATH = "${dockerHome}:${env.PATH}"

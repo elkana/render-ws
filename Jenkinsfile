@@ -1,5 +1,5 @@
 pipeline {
-  agent none
+  agent { dockerfile true }
   // environment {
   //   def dockerHome = tool 'mydocker'
   //   PATH = "${dockerHome}:${env.PATH}"

@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    dockerfile {
+      filename 'Dockerfile'
+      label 'budak'
+    }
+  }
   stages {
     stage('Hello') {
       steps {

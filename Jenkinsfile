@@ -6,21 +6,21 @@ pipeline {
   // }  
   stages {
     stage('Hello') {
-      agent {
-        docker {
-          image 'maven:3.5.0'
-        }
-      }
+      // agent {
+      //   docker {
+      //     image 'maven:3.5.0'
+      //   }
+      // }
       steps {
         echo 'Hello world'
         // sh 'echo ${env.PATH}'
       }
     }
-    stage('Docker Build') {
-      agent any
-      steps {
-        sh 'docker build .'
-      }
-    }
+    // stage('Docker Build') {
+    //   agent any
+    //   steps {
+    //     sh 'docker build .'
+    //   }
+    // }
   }
 }

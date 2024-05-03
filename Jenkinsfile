@@ -6,14 +6,12 @@ pipeline {
         echo 'Hello world'
       }
     }
-    stage('Initialize'){
-      steps {
+    stage('Docker Build') {
+      agent any
+      environment {
         def dockerHome = tool 'mydocker'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
       }
-    }    
-    stage('Docker Build') {
-      agent any
       steps {
         sh 'docker build .'
       }

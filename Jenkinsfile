@@ -9,7 +9,7 @@ pipeline {
       agent any
       steps {
         echo 'Hello world'
-        echo '${env.PATH}'
+        sh '${env.PATH}'
         sh '$(which docker)'
       }
     }

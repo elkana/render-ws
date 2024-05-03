@@ -6,6 +6,7 @@ pipeline {
   // }  
   stages {
     stage('Hello') {
+      agent any
       steps {
         echo 'Hello world'
         sh '$(which docker)'

@@ -1,5 +1,9 @@
 pipeline {
   agent none
+  environment {
+    def dockerHome = tool 'mydocker'
+    PATH = "/usr/bin/docker:${env.PATH}"
+  }  
   stages {
     stage('Hello') {
       steps {
@@ -9,8 +13,6 @@ pipeline {
     stage('Docker Build') {
       agent any
       steps {
-        def dockerHome = tool 'mydocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
         sh 'docker build .'
       }
     }
